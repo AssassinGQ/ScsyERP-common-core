@@ -17,11 +17,11 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
             Iterator<Long> iterator = hashSet.iterator();
             StringBuilder sb = new StringBuilder();
             while(iterator.hasNext()){
-                sb.append(String.valueOf(iterator.next())).append(",");
+                sb.append(iterator.next()).append(",");
             }
             return sb.toString();
         }catch(Exception e){
-            return "";
+            return " ";
         }
     }
 
