@@ -23,7 +23,8 @@ public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
             System.out.println("return : [" + sb.toString() + "]");
             return sb.toString();
         }catch(Exception e){
-            System.out.println("return : [' ']");
+            System.out.println("return : [' blank" +
+                    "']");
             return " ";
         }
     }
