@@ -13,14 +13,17 @@ import java.util.Iterator;
 public class LongHashSetTypeHandler extends BaseTypeHandler<HashSet<Long>> {
 
     private String Set2String(HashSet<Long> hashSet){
+        System.out.println("in LongHashSetTypeHandler, hashSet = " + hashSet);
         try{
             Iterator<Long> iterator = hashSet.iterator();
             StringBuilder sb = new StringBuilder();
             while(iterator.hasNext()){
                 sb.append(iterator.next()).append(",");
             }
+            System.out.println("return : [" + sb.toString() + "]");
             return sb.toString();
         }catch(Exception e){
+            System.out.println("return : [' ']");
             return " ";
         }
     }
