@@ -14,6 +14,7 @@ public abstract class FormBizImpl<T extends FormEntity> extends BaseBizImpl<T> i
         if(formEntity_check == null || formEntity_check.getIfDeleted()){
             throw new BizException(00010000, "该表单已被删除，entityId: %d", formEntity.getId());
         }
+        System.out.println(formEntity_check);
         if(formEntity_check.getIfCompleted()){
             throw new BizException(00010001, "该表单已经完成，不能更新");
         }
