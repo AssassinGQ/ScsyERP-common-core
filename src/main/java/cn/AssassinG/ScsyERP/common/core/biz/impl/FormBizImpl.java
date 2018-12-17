@@ -5,12 +5,9 @@ import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.exceptions.BizException;
 import cn.AssassinG.ScsyERP.common.utils.ValidUtils;
 
-import javax.transaction.Transactional;
-
 public abstract class FormBizImpl<T extends FormEntity> extends BaseBizImpl<T> implements FormBiz<T> {
 
     @Override
-    @Transactional
     public void update(T formEntity) {
         ValidUtils.ValidationWithExp(formEntity);
         T formEntity_check = this.getById(formEntity.getId());
