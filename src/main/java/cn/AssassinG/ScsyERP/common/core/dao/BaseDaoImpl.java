@@ -136,20 +136,20 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
 
     public Object getBy(Map<String, Object> paramMap, String sqlId) {
         if (paramMap == null)
-            paramMap = new HashMap<String, Object>();
+            paramMap = new HashMap<>();
         return this.getSqlSession().selectOne(getStatement(sqlId), paramMap);
     }
 
     public List<T> listBy(Map<String, Object> paramMap) {
         if (paramMap == null) {
-            paramMap = new HashMap<String, Object>();
+            paramMap = new HashMap<>();
         }
         return sessionTemplate.selectList(getStatement(SQL_LIST_BY), paramMap);
     }
 
     public List<Object> listBy(Map<String, Object> paramMap, String sqlId) {
         if (paramMap == null)
-            paramMap = new HashMap<String, Object>();
+            paramMap = new HashMap<>();
 
         return sessionTemplate.selectList(getStatement(sqlId), paramMap);
     }
@@ -157,7 +157,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
     public PageBean<T> listPage(PageParam pageParam, Map<String, Object> paramMap) {
 
         if (paramMap == null)
-            paramMap = new HashMap<String, Object>();
+            paramMap = new HashMap<>();
 
         // 获取分页数据集 , 注切勿换成 sessionTemplate 对象
         List<T> list = getSqlSession().selectList(getStatement(SQL_LIST_PAGE), paramMap,
@@ -182,7 +182,7 @@ public abstract class BaseDaoImpl<T extends BaseEntity> extends SqlSessionDaoSup
     public PageBean<T> listPage(PageParam pageParam, Map<String, Object> paramMap, String sqlId) {
 
         if (paramMap == null)
-            paramMap = new HashMap<String, Object>();
+            paramMap = new HashMap<>();
 
         // 获取分页数据集 , 注切勿换成 sessionTemplate 对象
         List<T> list = getSqlSession().selectList(getStatement(sqlId), paramMap,
